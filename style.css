@@ -1,0 +1,127 @@
+html, body  {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #F8FAFC;
+}
+.carta1, .carta2, .carta3 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  padding: 0;
+  cursor: pointer;
+  border: 4px solid transparent;
+  border-image: linear-gradient(135deg,rgba(29, 78, 216, 1) 0%, rgba(96, 165, 250, 1) 30%, rgba(110, 231, 183, 1) 100%) 1;
+  
+  position: absolute;
+}
+.carta1 {
+  top: 3vh;
+  left: 3vw;
+  
+  &:hover #tillivn {
+    transform: rotateY(-30deg);
+  }
+
+}
+.carta2 {
+  top: 20vh;
+  left: 70vw;
+
+  &:hover #till {
+    transform: rotateY(-30deg);
+  }
+}
+.carta3 {
+  top: 62vh;
+  left: 30vw;
+
+  &:hover #ivn {
+    transform: rotateY(-30deg);
+  }
+}
+.carta1-imgs, .carta2-imgs, .carta3-imgs {
+  grid-area: 1 / 1;
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+.carta1-imgs {
+  height: 250px;
+  width: 250px;
+}
+.carta2-imgs {
+  height: 200px;
+  width: 200px;
+}
+.carta3-imgs {
+  height: 130px;
+  width: 130px;
+}
+#tillivn, #till, #ivn {
+  z-index: 1000;
+}
+dialog {
+  border: 0;
+  border-radius: 5px;
+  background-color: #F8FAFC;
+  padding: 0;
+  /* Propiedades para el cierre */
+  translate: 0 100vh;
+  opacity: 0;
+  
+  /* Transición completa */
+  transition: 
+    translate 0.7s ease-out, 
+    opacity 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete, 
+    display 0.7s ease-out allow-discrete;
+}
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+}
+.dialog-img {
+  height: 90vh;
+}
+dialog[open] {
+  /* Estado final visible */
+  translate: 0 0;
+  opacity: 1;
+}
+
+/* Estado inicial (antes de abrir) */
+@starting-style {
+  dialog[open] {
+    translate: 0 100vh; /* Entra desde abajo */
+    opacity: 0;
+  }
+}
+.cerrar-cartas {
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #33415512;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 120120px;
+  cursor: pointer;
+  position: absolute;
+}
+.cruz {
+  height: 20px;
+  border-radius: 2222px;
+}
+#titulo {
+  color: #0F172A;
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 10vh;
+  font-family: "Loved by the king";
+}
