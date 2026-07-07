@@ -4,6 +4,10 @@ html, body  {
 }
 body {
   background-color: #F8FAFC;
+  background-image: url("assets/abstract-of-bokeh-pink-pastel-background-photo.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .carta1, .carta2, .carta3 {
   perspective: 1000px;
@@ -122,6 +126,61 @@ dialog[open] {
   color: #0F172A;
   text-align: center;
   font-size: 7rem;
-  margin-top: 10vh;
+  margin: 0;
+  padding-top: 10vh;
   font-family: "Loved by the king";
+}
+.corazon {
+  width: 100px;
+  transform: rotateZ(-30deg);
+  position: absolute;
+  top: 340px;
+  left: 3vw;
+}
+.corazao {
+  width: 250px;
+  position: absolute;
+  bottom: 10vh;
+  right: 10vw;
+  z-index: -100;
+}
+.cinta {
+  position: absolute;
+  top: -10vh;
+  left: 5vw;
+  overflow: hidden;
+  z-index: -10;
+}
+@media screen and (max-width: 850px) {
+  #titulo {
+    padding-top: 32vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .carta2 {
+    top: 55vh;
+    left: 5vw;
+  }
+  .carta3 {
+    top: 50vh;
+    left: 60vw;
+  }
+  .cinta {
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  .carta1-imgs {
+    height: 50vw;
+    width: 50vw;
+  }
+  .carta2-imgs {
+    height: 42vw;
+    width: 42vw;
+  }
+}
+@media screen and (max-height: 750px){
+  .corazao {
+    bottom: 0;
+  }
 }
